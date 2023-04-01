@@ -11,3 +11,5 @@ export class Welcome extends React.Component {
         )
     }
 }
+
+// {this.props.age && <Age age={this.props.age}/>} also works but i wanted to use ternary operator
