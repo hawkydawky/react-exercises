@@ -8,16 +8,14 @@ export class Counter extends React.Component {
         increment: this.props.increaseBy ?? 1,
     }
 
-    constructor(props) {
-        super(props)
-
+    componentDidMount(){
         setInterval(() => {
             this.setState((state) => {
                 return {count: state.count + state.increment}
             })
         }, this.state.timer)
     }
-
+    
     render() {
         return (
             <CounterDisplay count={this.state.count}/>
