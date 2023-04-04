@@ -1,13 +1,13 @@
 import React from "react";
 import { Welcome } from "./Welcome";
-import { Counter } from "./Counter";
+import { ClickCounter } from "./ClickCounter";
 
 export class App extends React.Component {
     render() {
         return (
             <div>
                 <Welcome name="John" age ={13}/>
-                <Counter initial={3} time={333} increaseBy={3}/>
+                <ClickCounter />
             </div>
         )
     }
