@@ -12,9 +12,15 @@ export class Login extends React.Component {
 
     changeComponents = (event) => {
         this.setState({
-            [event.target.name]: event.target.name === "isChecked" ? event.target.checked : event.target.value
+            [event.target.name]: event.target.name === "isChecked" ? event.target.checked : event.target.value,
         })
     }
+
+    onLogin = () => {
+        console.log(this.state)
+    }
+
+
 
     render() {
         return (
@@ -22,7 +28,7 @@ export class Login extends React.Component {
                 <input type="text" value={this.state.userName} name="userName" onChange={this.changeComponents}/>
                 <input type="password" value={this.state.password} name="password" onChange={this.changeComponents}/>
                 <input type="checkbox" name="isChecked" id="" checked={this.state.isChecked} onChange={this.changeComponents}/>
-
+                <button disabled={!(this.state.userName && this.state.password)} onClick={this.onLogin}>Login</button>
             </div>
         )
     }
