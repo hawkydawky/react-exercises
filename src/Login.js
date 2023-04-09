@@ -5,7 +5,7 @@ import React from "react"
 
 export class Login extends React.Component {
     state ={
-        userName:"",
+        userName: "",
         password: "",
         isChecked: false,
     }
@@ -20,6 +20,13 @@ export class Login extends React.Component {
         console.log(this.state)
     }
 
+    resetInputs = () => {
+        this.setState({
+            userName: "",
+            password: "",
+            isChecked: false,
+        })
+    }
 
 
     render() {
@@ -29,6 +36,7 @@ export class Login extends React.Component {
                 <input type="password" value={this.state.password} name="password" onChange={this.changeComponents}/>
                 <input type="checkbox" name="isChecked" id="" checked={this.state.isChecked} onChange={this.changeComponents}/>
                 <button disabled={!(this.state.userName && this.state.password)} onClick={this.onLogin}>Login</button>
+                <button type="reset" onClick={this.resetInputs}>Reset</button>
             </div>
         )
     }
