@@ -1,7 +1,7 @@
 import React from "react";
 import { Welcome } from "./Welcome";
 import { ClickTracker } from "./ClickTracker";
-import { Login } from "./Login";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 
 export class App extends React.Component {
     render() {
@@ -9,7 +9,7 @@ export class App extends React.Component {
             <div>
                 <Welcome name="John" age ={13}/>
                 <ClickTracker />
-                <Login />
+                <UncontrolledLogin />
             </div>
         )
     }
