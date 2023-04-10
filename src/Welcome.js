@@ -1,12 +1,10 @@
 import React from "react"
-import { Age } from "./Age"
 
 export class Welcome extends React.Component {
     render() {
         return (
             <div>
-                <p>Welcome, {this.props.name || "John Doe"}!</p>
-                <Age age={this.props.age}/>
+                <h2>Welcome, {this.props.name || "John Doe"}!</h2>
             </div>
         )
     }
