@@ -20,15 +20,16 @@ export class Login extends React.Component {
         console.log(this.state)
     }
 
-
-
     render() {
+        const ButtonStyle = {
+            backgroundColor: this.state.password.length <8 ? "red" : "green",
+        }
         return (
             <div>
                 <input type="text" value={this.state.userName} name="userName" onChange={this.changeComponents}/>
                 <input type="password" value={this.state.password} name="password" onChange={this.changeComponents}/>
                 <input type="checkbox" name="isChecked" id="" checked={this.state.isChecked} onChange={this.changeComponents}/>
-                <button disabled={!(this.state.userName && this.state.password)} onClick={this.onLogin}>Login</button>
+                <button disabled={!(this.state.userName && this.state.password)} onClick={this.onLogin} style={ButtonStyle}>Login</button>
             </div>
         )
     }
