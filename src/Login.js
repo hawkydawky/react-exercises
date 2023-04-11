@@ -1,36 +1,27 @@
-//Create a Login component containing three inputs: a username input, a password input and a remember checkbox.
-//All three inputs should be controlled components.
+import React, { useState } from "react";
 
-import React from "react"
+export function Login() {
+  const [loginData, setLoginData] = useState({
+    username: "",
+    password: "",
+    checkbox: false,
+  });
 
-export class Login extends React.Component {
-    state ={
-        userName:"",
-        password: "",
-        isChecked: false,
-    }
+  function handleInputChange(event) {
+    setLoginData((data) => {
+      return {
+        ...data,
+        [event.target.name]: event.target.type === "checkbox" ? event.target.checked : event.target.value,
+      };
+    });
+  }
 
-    changeComponents = (event) => {
-        this.setState({
-            [event.target.name]: event.target.name === "isChecked" ? event.target.checked : event.target.value,
-        })
-    }
-
-    onLogin = () => {
-        console.log(this.state)
-    }
-
-    render() {
-        const ButtonStyle = {
-            backgroundColor: this.state.password.length <8 ? "red" : "green",
-        }
-        return (
-            <div>
-                <input type="text" value={this.state.userName} name="userName" onChange={this.changeComponents}/>
-                <input type="password" value={this.state.password} name="password" onChange={this.changeComponents}/>
-                <input type="checkbox" name="isChecked" id="" checked={this.state.isChecked} onChange={this.changeComponents}/>
-                <button disabled={!(this.state.userName && this.state.password)} onClick={this.onLogin} style={ButtonStyle}>Login</button>
-            </div>
-        )
-    }
+  return (
+    <div>
+      <input type="text" name="username" value={loginData.username} onChange={handleInputChange} />
+      <input type="password" name="password" value={loginData.password} onChange={handleInputChange} />
+      <input type="checkbox" name="checkbox" checked={loginData.checkbox} onChange={handleInputChange} />
+      <button disabled={!(loginData.username && loginData.password)}>Login</button>
+    </div>
+  );
 }
