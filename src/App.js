@@ -9,7 +9,7 @@ export class App extends React.Component {
       <div>
         <Welcome name="Bernard" />
         <Login />
-        <ClickCounter />
+        <ClickCounter onCounterChange={(count) => console.log(`Counter equals to ${count}`)}/>
       </div>
     );
   }
