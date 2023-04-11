@@ -1,8 +1,7 @@
 import React from "react";
 import { Welcome } from "./Welcome";
 import { Login } from "./Login";
-import { LanguageContext } from "./LanguageContext";
-import { DisplayLanguage } from "./DisplayLanguage";
+import { Sum } from "./Sum";
 
 export class App extends React.Component {
   state = {
@@ -20,9 +19,7 @@ export class App extends React.Component {
       <div>
         <Welcome name="Bernard" />
         <Login />
-        <LanguageContext.Provider value={this.state.language}>
-          <DisplayLanguage handleLanguageChange={this.handleLanguageChange} />
-        </LanguageContext.Provider>
+        <Sum />
       </div>
     );
   }

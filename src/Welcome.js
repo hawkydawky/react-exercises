@@ -1,9 +1,9 @@
 import React from "react"
 
-export function Welcome(props) {
+export function Welcome({name = "Johnny"}) {
     return (
         <div>
-            <h2>Welcome, {props.name || "Johnny"}</h2>
+            <h2>Welcome, {name}</h2>
         </div>
     )
 }
