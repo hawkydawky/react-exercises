@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export function Githubuser({ username = "hawkydawky" }) {
+export function Githubuser({ username }) {
 
     const [data, setData] = useState(null)
 
@@ -16,7 +16,7 @@ export function Githubuser({ username = "hawkydawky" }) {
 
     return (
         <div>
-            {data && <h2>{data.name}</h2> }
+            {data && <h2>{data.login}</h2> }
             {data && <a href={data.html_url}>{data.html_url}</a> }
             {data && <p>Public repo count: {data.public_repos}</p>}
         </div>
