@@ -1,7 +1,7 @@
 import React from "react";
 import { Welcome } from "./Welcome";
 import { Login } from "./Login";
-import { Sum } from "./Sum";
+import { ClickCounter } from "./ClickCounter";
 
 export class App extends React.Component {
   state = {
@@ -19,7 +19,7 @@ export class App extends React.Component {
       <div>
         <Welcome name="Bernard" />
         <Login />
-        <Sum />
+        <ClickCounter />
       </div>
     );
   }
