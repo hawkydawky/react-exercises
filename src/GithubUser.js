@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react"
+import { useGithub } from "./useGithub"
 
-export function Githubuser({ username = "hawkydawky" }) {
+export function Githubuser() {
 
-    const [data, setData] = useState(null)
-
-    useEffect(() => {
-        fetch(`https://api.github.com/users/${username}`)
-            .then(response => {
-                return response.json()
-            })
-            .then(json => {
-                setData(json)
-            })
-    }, [username])
+    const {data, onFetch, onInputChange} = useGithub()
 
     return (
         <div>
+            <hr />
+            <h1>Github Username Fetcher!</h1>
+            <input type="text" name="usernameInput" placeholder="username" onChange={onInputChange}/>
+            <button onClick={onFetch}>Fetch</button>
             {data && <h2>{data.name}</h2> }
             {data && <a href={data.html_url}>{data.html_url}</a> }
             {data && <p>Public repo count: {data.public_repos}</p>}
