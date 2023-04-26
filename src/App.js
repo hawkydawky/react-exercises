@@ -14,6 +14,7 @@ export function App() {
         <Route path='/' element={<Welcome name="Bernard" />} />
         <Route path='counter' element={<Counter />} />
         <Route path='users/:username' element={<Githubuser />} />
+        <Route path='*' element={<h4>Page does not exists!</h4>} />
       </Routes>
     </div>
   );
