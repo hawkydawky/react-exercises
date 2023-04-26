@@ -21,7 +21,7 @@ export function Githubuser() {
             {data && <h2>{data.name}</h2> }
             {data && <a href={data.html_url}>{data.html_url}</a> }
             {data && <p>Public repo count: {data.public_repos}</p>}
-            <Link to="/">Back</Link> 
+            <Link to="/users">Back</Link> 
         </div>
     )
 }
