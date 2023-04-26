@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function Counter({ initialValue = 0 }) {
     const [count, setCount] = useState(initialValue);
@@ -15,7 +16,10 @@ export function Counter({ initialValue = 0 }) {
         <div>
             <h3>Count: {count}</h3>
             <button onClick={counter}>Increase</button>
-            <button onClick={reset}>Reset</button>
+            <button onClick={reset}>Reset </button>
+            <div>
+                <Link to="/">Back</Link> 
+            </div>
         </div>
     )
 }
