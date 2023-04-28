@@ -1,9 +1,8 @@
-import { MyForm } from "./MyForm";
-
+import { Githubuser } from "./GithubUser";
 export function App() {
   return (
     <div>
-      <MyForm />
+      <Githubuser />
     </div>
   )
 }
