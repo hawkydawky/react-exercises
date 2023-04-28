@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export function Githubuser() {
   const [usernameInput, setUsernameInput] = useState("");
-  const { data, error, loading, onFetch} = useGithubUser(usernameInput);
+  const { data, error, loading, onFetch, refetchData } = useGithubUser();
 
   function onInputChange(event) {
     setUsernameInput(event.target.value)
@@ -15,6 +15,7 @@ export function Githubuser() {
       <h1>Github Username Fetcher!</h1>
       <input type="text" name="usernameInput" placeholder="username" value={usernameInput} onChange={onInputChange} />
       <button onClick={() => onFetch(usernameInput)}>Fetch</button>
+      <button onClick={refetchData}>Refresh</button>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error.message}</p>}
       {data && (
